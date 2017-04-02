@@ -1,0 +1,28 @@
+<%= form_for @post, html: { multipart: true } do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :category, 'Select Coin Category' %><br />
+  <%= f.collection_select(:category_id, Category.all, :id, :name, :include_blank => "Please select category for post") %>
+  
+  <%= f.label :denomination, 'Denomination' %><br />
+  <%= f.text_field :denomination, placeholder: "Enter Denomination" %>
+
+  <%= f.label :date, 'Coin Dated' %>
+  <%= f.text_field :date, placeholder: 'Date Range of Coin' %>
+
+  <%= f.label :metal, 'Metal' %>
+  <%= f.text_field :metal, placeholder: 'Metal' %>
+
+  <%= f.label :mint, 'Mint' %>
+  <%= f.text_field :mint, placeholder: 'Mint' %>
+
+  <%= f.label :details, 'Coin Details' %><br />
+  <div class="field">
+    <%= f.text_area :details, placeholder: "Enter Details of the Coin" %>
+  </div>
+
+  <%= f.label :pictures %>
+  <%= f.file_field :pictures, multiple: true %>
+  
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>
