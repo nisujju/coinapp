@@ -250,20 +250,31 @@ span.picture {
 
   .table {
   width: auto;
-      border: 1px solid black;
     border-collapse: collapse;
+    padding: 5px;
+    border: solid 1px #EFEFEF;
+    margin: 5px;
+    &:hover{
+        border: solid 1px #CCC;
+    -moz-box-shadow: 1px 1px 5px #999;
+    -webkit-box-shadow: 1px 1px 5px #999;
+        box-shadow: 1px 1px 5px #999;
+    }
     
   }
 
 .thumbnail {
     background-color: #878340;
-    box-shadow: 10px 10px grey;
     a {
     color: #fff;
     &:hover {
       color: #fff;
       text-decoration: none;
       }
+    }
+    &:hover{
+        opacity: 0.7;
+        box-shadow: 10px 10px grey;
     }
   .caption {
     color: #fff;
@@ -275,9 +286,6 @@ span.picture {
     }
 }
 
-.thumbnail:hover {
-  opacity: 0.7;
-}
 
 .carousel{
   background-color: grey;

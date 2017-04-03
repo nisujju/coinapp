@@ -8,4 +8,7 @@ class CategoriesController < ApplicationController
   	@category=Category.find(params[:id])
   	@posts=@category.posts.paginate(page: params[:page])
   end
+
+  def index
+  end
 end
