@@ -1,3 +1,4 @@
+<div class="container center">
 <% @posts.each_with_index do |post, i| %>
 <table class="table table-hover table-bordered" style="display: inline-block;">
 	<tr>
@@ -29,6 +30,7 @@
 </table>
 <script>$("#zoom-<%=i%>").elevateZoom();</script>
 <%end%>
+</div>
 <!-- <script>$("#zoom_01").elevateZoom();</script> -->
 <%= will_paginate @posts %>
 
