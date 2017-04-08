@@ -1,0 +1,41 @@
+<div class="container center">
+<% if @posts.empty? %>
+	<h1> Coins comming soon under this category. If you require information for this category please contact us <%= link_to "Contact", contact_path %>
+	</h1>
+<%end%>
+<% @posts.each_with_index do |post, i| %>
+<table class="table table-hover table-bordered" style="display: inline-block;">
+	<tr>
+	<td align="center" colspan="2"><%= image_tag post.pictures[0].thumb.url, id: "zoom-#{i}", width: "150", height: "75", data: {'zoom-image' => post.pictures[0].url} %></td>
+	</tr>
+	<tr>
+	<td class="back-style">Denomination</td><td><%= post.denomination %> </td>
+	</tr>
+	<tr>
+	<td class="back-style">Dated</td> <td><%= post.date %> </td>
+	</tr>
+	<tr>
+	<td class="back-style">Metal</td><td><%= post.metal %> </td>
+	</tr>
+	<tr>
+	<td class="back-style">Mint</td> <td><%= post.mint %> </td>
+	</tr>
+	<tr>
+	<td class="back-style">Category</td> <td><%= post.category.name %></td>
+	</tr>
+	<tr>
+	<td align="center" colspan="2"><%= link_to "View Details", post_path(post), class: "btn btn-primary"%>
+		<% if current_user.admin? %>
+      <%= link_to "Delete", post, class: "btn btn-danger", method: :delete,
+                                       data: { confirm: "Do you want to delete this post"}  %>
+   		<% end %>
+	</td>
+	</tr>
+</table>
+<script>$("#zoom-<%=i%>").elevateZoom();</script>
+<%end%>
+</div>
+<!-- <script>$("#zoom_01").elevateZoom();</script> -->
+<%= will_paginate @posts %>
+
+<!-- <script>$("#zoom_01").ezPlus();</script> -->

@@ -1,15 +1,5 @@
 Rails.application.routes.draw do
-  get 'posts/new'
 
-  get 'posts/edit'
-
-  get 'posts/show'
-
-  get 'categories/show'
-
-  get 'sessions/new'
-
-  get 'users/new'
 
   root             'static_pages#home'
   get 'help'    => 'static_pages#help'
@@ -23,6 +13,8 @@ Rails.application.routes.draw do
   resources :users
   resources :posts
   resources :categories
+
+  get 'coins' => 'categories#coins'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -6,9 +6,20 @@ class CategoriesController < ApplicationController
       redirect_to login_path
     end
   	@category=Category.find(params[:id])
-  	@posts=@category.posts.paginate(page: params[:page])
+  	# @posts=@category.posts.paginate(page: params[:page])
   end
 
   def index
+    # @subcategories = Category.find(params[:id])
+  end
+
+  def post
+    @category=Category.find(params[:id])
+    @posts=@category.posts.paginate(page: params[:page])
+  end
+
+  def coins
+    @category=Category.find(params[:id])
+    @posts=@category.posts.paginate(page: params[:page])
   end
 end

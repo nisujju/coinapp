@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170401145209) do
+ActiveRecord::Schema.define(version: 20170408073251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,10 @@ ActiveRecord::Schema.define(version: 20170401145209) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "coin_id"
   end
+
+  add_index "categories", ["coin_id"], name: "index_categories_on_coin_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.integer  "category_id"
