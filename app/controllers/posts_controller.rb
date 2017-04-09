@@ -20,8 +20,10 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       flash[:success] = "Post created!"
+      debugger
+      # redirect_to category_path(@post.category_id)
+        redirect_to coins_path(id: @post.category_id)
       Newcoin.coinadded(@post).deliver_later
-      redirect_to category_path(@post.category_id)
     else
       render 'new'
     end

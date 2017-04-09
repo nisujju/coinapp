@@ -23,8 +23,8 @@ class UsersController < ApplicationController
     if @user.save
       Usermailer.welcome_email(@user).deliver_later
       log_in @user
-      redirect_to @user
-      flash[:success] = "Welcome to the Sample App!"
+      redirect_to root_url
+      flash[:success] = "Welcome to our site. Browse Coin categories for more details!"
     else
       render 'new'
     end

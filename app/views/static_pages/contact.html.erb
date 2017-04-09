@@ -1,6 +1,31 @@
-<% provide(:title, 'Contact') %>
-<h1>Contact</h1>
-<p>
-  Contact the Ruby on Rails Tutorial about the sample app at the
-  <a href="http://www.railstutorial.org/#contact">contact page</a>.
-</p>
+<% provide(:title, 'Contact us form for coins and collectible enquiry') %>
+<div class='container'>
+<h1> Contact us </h1>
+<br />
+
+<h4 class="center"> Fill in the below form. We will reach back to you. Please fill all the fields for better response </h4>
+<br />
+<br />
+<div class='row'>
+<div class="col-sm-12 col-md-4"></div>
+<div class="col-sm-12 col-md-4">
+<%= form_tag(controller: "static_pages", action: "contacted") do %>
+
+  <%= label_tag(:name, 'Enter name') %>
+  <%= text_field_tag(:name, nil, class: 'form-control') %>
+
+  <%= label_tag(:email, 'Enter Email') %>
+  <%= email_field_tag(:email, nil, class: 'form-control', id:'email') %>
+
+  <%= label_tag(:phone, 'Enter Your Phone Number') %>
+  <%= telephone_field_tag(:phone, nil, class: 'form-control') %>
+
+  <%= label_tag(:query, 'Enter your query') %>
+  <%= text_area_tag(:query, nil, class: 'form-control') %>
+
+  <%= submit_tag("Submit", class: 'btn btn-default') %>
+<% end %>
+</div>
+<div class="col-sm-12 col-md-4"></div>
+</div>
+</div>

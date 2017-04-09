@@ -1,3 +1,8 @@
+<div class="container">
+
+<div class="row">
+<div class="col-md-4"> </div>
+<div class="col-md-4">
 <%= form_for @post, html: { multipart: true } do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
@@ -26,3 +31,7 @@
   
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
+</div>
+<div class="col-md-4"> </div>
+</div>
+</div>

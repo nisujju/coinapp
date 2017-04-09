@@ -4,7 +4,7 @@
 	</h1>
 <%end%>
 <% @posts.each_with_index do |post, i| %>
-<table class="table table-hover table-bordered" style="display: inline-block;">
+<table class="table table-hover table-bordered" style="display: inline-block; margin: 30px">
 	<tr>
 	<td align="center" colspan="2"><%= image_tag post.pictures[0].thumb.url, id: "zoom-#{i}", width: "150", height: "75", data: {'zoom-image' => post.pictures[0].url} %></td>
 	</tr>
