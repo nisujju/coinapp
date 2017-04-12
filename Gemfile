@@ -6,7 +6,6 @@ gem 'rails', '4.2.6'
 gem 'bootstrap-sass',       '3.2.0.0'
 gem 'bcrypt',               '3.1.11'
 # Use sqlite3 as the database for Active Record
-gem 'pg',             '0.18.4'
 gem 'fog-aws'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -18,6 +17,7 @@ gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 gem 'elevatezoom-rails'
 gem 'font-awesome-rails'
+gem 'pg',             '0.18.4'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -46,7 +46,6 @@ gem 'faker',                   '1.4.2'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  # gem 'pg',             '0.18.4'
 end
 
 group :development do
@@ -56,8 +55,9 @@ group :development do
 end
 
 group :production do
-   gem 'unicorn'
-   gem 'mysql2', '~> 0.3.18'
+   # gem 'unicorn'
+   # gem 'mysql2', '~> 0.3.18'
+   gem 'rails_12factor', '0.0.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
