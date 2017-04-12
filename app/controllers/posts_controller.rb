@@ -29,7 +29,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-  	debugger
     find_post
   	@post.destroy
     flash[:success] = "Post deleted"
