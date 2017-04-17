@@ -55,7 +55,7 @@ group :development do
 end
 
 group :production do
-   # gem 'unicorn'
+   gem 'unicorn'
    # gem 'mysql2', '~> 0.3.18'
    gem 'rails_12factor', '0.0.2'
 end
