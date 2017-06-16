@@ -1,28 +1,24 @@
-== README
+== COINAPP  https://blooming-cliffs-75251.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is just a model application(not production) to showcase a CMS. It enables its admin to utilize power of rails to work as a CMS and provide admin contents to outside world for viewing purpose. Admin has the power to upload images and data about those images into application and signed up/logged in users have the read access for the same. Admin has all the access to all the contents of the system. For each coin categories we have subcategories into which admin can upload upto maximum of 3 images for a particular post. A strict validation is done at backend to check validity of all the data. Admin doesn't have to worry about the image size which is uploaded as the images as automatically cropped and resized as per the set standards by carrierwave. This ensures application remains lightweight and resolves any view issue.
 
-Things you may want to cover:
+Below are important technical featured of this app:
 
-* Ruby version
+* CMS app which gives admin access to use the app for uploading antique coins images with details. This app ensures proper authentication and authorisation of resourses so that only admin has all the special access.
 
-* System dependencies
+* Image processing handled by Imagemagick and Carrierwave. This ensures all the uploaded images get proper configuration and size prior to uploading. It also tags images with there appropriate posts and categories and fetch accordingly while get request.
 
-* Configuration
+* For image storage the application uses AWS S3 cloud storage. S3 integration and configuration has been implemented.
 
-* Database creation
+* This app also uses Actionmailer feature of rails. As soon as the new images/posts created by admin, all the registered users will be receiving emails along with the newly posted coin details.
 
-* Database initialization
+* Mails in production is done by third party API Sendgrid. App integrated with sendgrid. But current features since this is not production ready hence sendgrid feature is kept off due to security reason but coding is done and tested.
 
-* How to run the test suite
+* To effectively utilize database and code logic the schema of categories tables uses self joins with two fields as coins and subcategories. Please check model and schema for more details.
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+* ContactUs form also integrated with Actionmailer so that any user can contact the admin for any details.
 
-* ...
+* Application deployed to heroku and configured to use AWS S3.
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
