@@ -1,4 +1,4 @@
-== COINAPP  https://blooming-cliffs-75251.herokuapp.com/
+== COINAPP  
 
 This application is just a model application(not production) to showcase a CMS. It enables its admin to utilize power of rails to work as a CMS and provide admin contents to outside world for viewing purpose. Admin has the power to upload images and data about those images into application and signed up/logged in users have the read access for the same. Admin has all the access to all the contents of the system. For each coin categories we have subcategories into which admin can upload upto maximum of 3 images for a particular post. A strict validation is done at backend to check validity of all the data. Admin doesn't have to worry about the image size which is uploaded as the images as automatically cropped and resized as per the set standards by carrierwave. This ensures application remains lightweight and resolves any view issue.
 
